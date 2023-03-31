@@ -1,0 +1,8 @@
+{
+  "name": "yapis_1.1",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "antlr4": "^4.12.0"
+  }
+}
