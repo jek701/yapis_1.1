@@ -1,4 +1,4 @@
-// Generated from java-escape by ANTLR 4.11.1
+// Generated from /Users/ikromjonahmadjonov/WebstormProjects/yapis_1.1/MatrixOperations.g4 by ANTLR 4.12.0
 // jshint ignore: start
 import antlr4 from 'antlr4';
 
@@ -50,12 +50,39 @@ export default class MatrixOperationsListener extends antlr4.tree.ParseTreeListe
 	}
 
 
+	// Enter a parse tree produced by MatrixOperationsParser#assignment.
+	enterAssignment(ctx) {
+	}
+
+	// Exit a parse tree produced by MatrixOperationsParser#assignment.
+	exitAssignment(ctx) {
+	}
+
+
+	// Enter a parse tree produced by MatrixOperationsParser#varDeclaration.
+	enterVarDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by MatrixOperationsParser#varDeclaration.
+	exitVarDeclaration(ctx) {
+	}
+
+
 	// Enter a parse tree produced by MatrixOperationsParser#expr.
 	enterExpr(ctx) {
 	}
 
 	// Exit a parse tree produced by MatrixOperationsParser#expr.
 	exitExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by MatrixOperationsParser#operand.
+	enterOperand(ctx) {
+	}
+
+	// Exit a parse tree produced by MatrixOperationsParser#operand.
+	exitOperand(ctx) {
 	}
 
 

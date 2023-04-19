@@ -1,4 +1,4 @@
-// Generated from java-escape by ANTLR 4.11.1
+// Generated from /Users/ikromjonahmadjonov/WebstormProjects/yapis_1.1/MatrixOperations.g4 by ANTLR 4.12.0
 // jshint ignore: start
 import antlr4 from 'antlr4';
 
@@ -36,8 +36,26 @@ export default class MatrixOperationsVisitor extends antlr4.tree.ParseTreeVisito
 	}
 
 
+	// Visit a parse tree produced by MatrixOperationsParser#assignment.
+	visitAssignment(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by MatrixOperationsParser#varDeclaration.
+	visitVarDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by MatrixOperationsParser#expr.
 	visitExpr(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by MatrixOperationsParser#operand.
+	visitOperand(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

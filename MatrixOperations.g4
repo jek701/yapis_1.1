@@ -14,32 +14,31 @@ statement
     ;
 
 forStatement
-    : FOR LPAREN expr SEMI expr SEMI expr RPAREN LBRACE (statement)* RBRACE
+    : 'for' '(' expr ';' expr ';' expr ')' '{' (statement)* '}'
     ;
 
 ifStatement
-    : IF LPAREN expr RPAREN LBRACE (statement)* RBRACE (ELSE LBRACE (statement)* RBRACE)?
+    : 'if' '(' expr ')' '{' (statement)* '}' ('else' '{' (statement)* '}')?
     ;
 
 functionDeclaration
-    : FUNCTION IDENTIFIER LPAREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN LBRACE (statement)* RBRACE
+    : 'function' IDENTIFIER '(' (IDENTIFIER (',' IDENTIFIER)*)? ')' '{' (statement)* '}'
     ;
 
 assignment
-    : IDENTIFIER ASSIGN expr SEMI
+    : IDENTIFIER '=' expr ';'
     ;
 
 varDeclaration
-    : VAR IDENTIFIER SEMI
+    : 'var' IDENTIFIER ';'
     ;
 
 expr
-    : operand op=(EQ | NEQ) operand
-    | operand op=(LT | GT | LEQ | GEQ) operand
-    | operand op=(PLUS | MINUS) operand
-    | operand op=(MULT | DIV | MOD) operand
-    | operand POW operand
-    | NOT operand
+    : operand op=('==' | '!=') operand
+    | operand op=('<' | '>' | '<=' | '>=') operand
+    | operand op=('+' | '-') operand
+    | operand op=('*' | '\\' | '%') operand
+    | operand '^' operand
     ;
 
 operand
@@ -48,40 +47,14 @@ operand
     ;
 
 matrix
-    : LBRACKET row (COMMA row)* RBRACKET
+    : '[' row (',' row)* ']'
     ;
 
 row
-    : LBRACKET NUMBER (COMMA NUMBER)* RBRACKET
+    : '[' NUMBER (',' NUMBER)* ']'
     ;
 
-VAR        : 'var';
-FOR        : 'for';
-IF         : 'if';
-FUNCTION   : 'function';
-ELSE       : 'else';
-ASSIGN     : '=';
-PLUS       : '+';
-MINUS      : '-';
-MULT       : '*';
-DIV        : '\\';
-MOD        : '%';
-POW        : '^';
-EQ         : '==';
-NEQ        : '!=';
-LT         : '<';
-GT         : '>';
-LEQ        : '<=';
-GEQ        : '>=';
-LBRACKET   : '[';
-RBRACKET   : ']';
-LPAREN     : '(';
-RPAREN     : ')';
-LBRACE     : '{';
-RBRACE     : '}';
-COMMA      : ',';
-SEMI       : ';';
-NOT        : '!';
+
 IDENTIFIER : [a-zA-Z_][a-zA-Z0-9_]*;
 NUMBER     : [0-9]+;
 WS         : [ \t\r\n]+ -> skip;
