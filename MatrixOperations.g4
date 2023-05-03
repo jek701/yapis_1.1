@@ -1,7 +1,7 @@
 grammar MatrixOperations;
 
 startRule
-    : statement EOF
+    : (statement)* EOF
     ;
 
 statement
@@ -39,6 +39,7 @@ expr
     | operand op=('+' | '-') operand
     | operand op=('*' | '\\' | '%') operand
     | operand '^' operand
+    | matrix
     ;
 
 operand
